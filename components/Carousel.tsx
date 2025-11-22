@@ -113,7 +113,7 @@ export default function Carousel() {
                     Learn More / En savoir plus
                   </Link>
                   <Link
-                    href="#book-test-drive"
+                    href="/book-test-drive"
                     className="px-8 py-3 border-2 border-white text-white hover:bg-white hover:text-primary transition-colors rounded-full font-medium"
                   >
                     Book Test Drive / Réserver

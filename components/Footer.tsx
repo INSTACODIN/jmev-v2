@@ -39,6 +39,12 @@ export default function Footer() {
               >
                 Vehicle Environmental Info / Info environnementale
               </Link>
+              <Link
+                href="/book-test-drive"
+                className="text-gray-medium hover:text-white transition-colors text-sm"
+              >
+                Book Test Drive / Réserver un essai
+              </Link>
             </nav>
           </div>
 
@@ -58,9 +64,21 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-white/10 pt-8 text-center">
-          <p className="text-sm text-gray-medium">
+          <p className="text-sm text-gray-medium mb-6">
             ©2023 Jiangxi JMEV Group New Energy Vehicle Co., Ltd. All rights reserved.
           </p>
+          
+          {/* INSTACODIN Credit */}
+          <div className="border-t border-white/10 pt-8">
+            <a
+              href="https://www.instacodin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg md:text-xl font-medium text-white hover:text-primary transition-colors flex items-center justify-center gap-2 cursor-pointer inline-block"
+            >
+              developed with <span className="text-red-500">❤️</span> by INSTACODIN
+            </a>
+          </div>
         </div>
       </div>
     </footer>
