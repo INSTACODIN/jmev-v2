@@ -40,7 +40,7 @@ const stories: Story[] = [
   },
 ];
 
-export default function StoriesSection() {
+export default function StoriesSection({ locale }: { locale?: string }) {
   return (
     <section className="py-20 bg-gray-light">
       <div className="container mx-auto px-4 lg:px-8">

@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import { defaultLocale } from "@/lib/i18n";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "JMEV Elight Electric Car - Official Dealer",
-  description: "Discover the all-new JMEV Elight, a compact and eco-friendly electric car. Learn about features, performance, pricing, and how to buy.",
+  title: "JMEV - Electric Vehicles",
+  description: "Discover JMEV electric vehicles",
 };
 
 export default function RootLayout({
@@ -24,14 +23,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Middleware handles redirects to /[locale]
+  // This is a minimal root layout
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Header />
-        <main>{children}</main>
-        <Footer />
+    <html lang={defaultLocale} suppressHydrationWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {children}
       </body>
     </html>
   );

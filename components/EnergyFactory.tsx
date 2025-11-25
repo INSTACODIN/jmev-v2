@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-export default function EnergyFactory() {
+export default function EnergyFactory({ locale }: { locale?: string }) {
   return (
     <section className="py-20 bg-gray-light">
       <div className="container mx-auto px-4 lg:px-8">

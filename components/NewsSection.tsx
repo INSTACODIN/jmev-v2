@@ -36,7 +36,7 @@ const newsItems: NewsItem[] = [
   },
 ];
 
-export default function NewsSection() {
+export default function NewsSection({ locale }: { locale?: string }) {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 lg:px-8">
@@ -47,12 +47,14 @@ export default function NewsSection() {
           transition={{ duration: 0.6 }}
           className="flex items-center justify-between mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-dark">News / Actualités</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-dark">
+            {locale === 'fr' ? 'Actualités' : 'News'}
+          </h2>
           <Link
-            href="/news"
+            href={locale ? `/${locale}/news` : "/news"}
             className="text-primary hover:text-primary-dark transition-colors font-medium"
           >
-            More / Plus →
+            {locale === 'fr' ? 'Plus →' : 'More →'}
           </Link>
         </motion.div>
 
@@ -65,7 +67,7 @@ export default function NewsSection() {
             transition={{ delay: 0.1, duration: 0.5 }}
             className="md:col-span-2"
           >
-            <Link href={newsItems[0].link} className="block group">
+            <Link href={locale ? `/${locale}${newsItems[0].link}` : newsItems[0].link} className="block group">
               <div className="relative h-64 md:h-80 rounded-xl overflow-hidden mb-4 bg-gradient-to-br from-primary/20 to-accent/20">
                 <Image
                   src={newsItems[0].image}
@@ -94,7 +96,7 @@ export default function NewsSection() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 + index * 0.1, duration: 0.5 }}
               >
-                <Link href={item.link} className="block group">
+                <Link href={locale ? `/${locale}${item.link}` : item.link} className="block group">
                   <div className="flex gap-4">
                     <div className="relative w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20">
                       <Image

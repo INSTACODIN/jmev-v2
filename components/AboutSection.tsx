@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-export default function AboutSection() {
+export default function AboutSection({ locale }: { locale?: string }) {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 lg:px-8">

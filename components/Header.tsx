@@ -3,11 +3,20 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import { type Locale, getTranslations } from "@/lib/i18n";
+import LanguageSwitcher from "./LanguageSwitcher";
 
-export default function Header() {
+interface HeaderProps {
+  locale: Locale;
+}
+
+export default function Header({ locale }: HeaderProps) {
+  const t = getTranslations(locale);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   // Handle scroll to change header background
   useEffect(() => {
@@ -16,14 +25,20 @@ export default function Header() {
       setIsScrolled(scrollPosition > 50);
     };
 
+    // Also check on mount for pages that start scrolled
+    handleScroll();
+    
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Check if we're on a page with white background (contact, about, news)
+  const isWhitePage = pathname?.includes('/contact') || pathname?.includes('/about') || pathname?.includes('/news');
+  
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-1000 ease-in-out ${
-        isScrolled
+        isScrolled || isWhitePage
           ? "bg-black/95 backdrop-blur-sm shadow-sm"
           : "bg-transparent"
       }`}
@@ -31,7 +46,7 @@ export default function Header() {
       <nav className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href={`/${locale}`} className="flex items-center">
             <img
               src="/images/logo.png"
               alt="JMEV Logo"
@@ -55,61 +70,54 @@ export default function Header() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             <Link
-              href="/detail/ewind"
+              href={`/${locale}/detail/ewind`}
               className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
                 isScrolled ? "text-white" : "text-white"
               }`}
             >
-              EWIND
+              {t.nav.ewind}
             </Link>
             <Link
-              href="/detail/elight"
+              href={`/${locale}/detail/ev3`}
               className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
                 isScrolled ? "text-white" : "text-white"
               }`}
             >
-              ELIGHT
+              {t.nav.ev3}
             </Link>
             <Link
-              href="/detail/ev3"
+              href={`/${locale}/detail/ev2`}
               className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
                 isScrolled ? "text-white" : "text-white"
               }`}
             >
-              EV3
+              {t.nav.ev2}
             </Link>
             <Link
-              href="/detail/ev2"
+              href={`/${locale}/news`}
               className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
                 isScrolled ? "text-white" : "text-white"
               }`}
             >
-              EV2
+              {t.nav.news}
             </Link>
             <Link
-              href="/news"
+              href={`/${locale}/about`}
               className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
                 isScrolled ? "text-white" : "text-white"
               }`}
             >
-              News
+              {t.nav.aboutUs}
             </Link>
             <Link
-              href="/about-us"
+              href={`/${locale}/contact`}
               className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
                 isScrolled ? "text-white" : "text-white"
               }`}
             >
-              About Us
+              {t.nav.contactUs}
             </Link>
-            <Link
-              href="/contact-us"
-              className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
-                isScrolled ? "text-white" : "text-white"
-              }`}
-            >
-              Contact Us
-            </Link>
+            <LanguageSwitcher currentLocale={locale} />
           </div>
 
           {/* Mobile Menu Button */}
@@ -158,68 +166,62 @@ export default function Header() {
             >
               <div className="flex flex-col gap-4">
                 <Link
-                  href="/detail/ewind"
+                  href={`/${locale}/detail/ewind`}
                   className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
                     isScrolled ? "text-white" : "text-white"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  EWIND
+                  {t.nav.ewind}
                 </Link>
                 <Link
-                  href="/detail/elight"
+                  href={`/${locale}/detail/ev3`}
                   className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
                     isScrolled ? "text-white" : "text-white"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  ELIGHT
+                  {t.nav.ev3}
                 </Link>
                 <Link
-                  href="/detail/ev3"
+                  href={`/${locale}/detail/ev2`}
                   className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
                     isScrolled ? "text-white" : "text-white"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  EV3
+                  {t.nav.ev2}
                 </Link>
                 <Link
-                  href="/detail/ev2"
+                  href={`/${locale}/news`}
                   className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
                     isScrolled ? "text-white" : "text-white"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  EV2
+                  {t.nav.news}
                 </Link>
                 <Link
-                  href="/news"
+                  href={`/${locale}/about`}
                   className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
                     isScrolled ? "text-white" : "text-white"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  News
+                  {t.nav.aboutUs}
                 </Link>
                 <Link
-                  href="/about-us"
+                  href={`/${locale}/contact`}
                   className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
                     isScrolled ? "text-white" : "text-white"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  About Us
+                  {t.nav.contactUs}
                 </Link>
-                <Link
-                  href="/contact-us"
-                  className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
-                    isScrolled ? "text-white" : "text-white"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Contact Us
-                </Link>
+                <div className="pt-2">
+                  <LanguageSwitcher currentLocale={locale} />
+                </div>
               </div>
             </motion.div>
           )}

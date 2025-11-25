@@ -1,14 +1,20 @@
 import Link from "next/link";
 import Image from "next/image";
+import { type Locale, getTranslations } from "@/lib/i18n";
 
-export default function Footer() {
+interface FooterProps {
+  locale: Locale;
+}
+
+export default function Footer({ locale }: FooterProps) {
+  const t = getTranslations(locale);
   return (
     <footer className="bg-gray-dark text-white">
       <div className="container mx-auto px-4 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center">
+            <Link href={`/${locale}`} className="flex items-center">
               <Image
                 src="/images/logo.png"
                 alt="JMEV Logo"
@@ -21,38 +27,32 @@ export default function Footer() {
 
           {/* Models */}
           <div>
-            <h3 className="text-sm font-semibold mb-4 text-white/80">Models</h3>
+            <h3 className="text-sm font-semibold mb-4 text-white/80">{t.footer.models}</h3>
             <nav className="flex flex-col gap-2">
               <Link
-                href="/detail/ewind"
+                href={`/${locale}/detail/ewind`}
                 className="text-white hover:text-primary transition-colors text-sm"
               >
-                EWIND
+                {t.nav.ewind}
               </Link>
               <Link
-                href="/detail/elight"
+                href={`/${locale}/detail/ev3`}
                 className="text-white hover:text-primary transition-colors text-sm"
               >
-                ELIGHT
+                {t.nav.ev3}
               </Link>
               <Link
-                href="/detail/ev3"
+                href={`/${locale}/detail/ev2`}
                 className="text-white hover:text-primary transition-colors text-sm"
               >
-                EV3
-              </Link>
-              <Link
-                href="/detail/ev2"
-                className="text-white hover:text-primary transition-colors text-sm"
-              >
-                EV2
+                {t.nav.ev2}
               </Link>
             </nav>
           </div>
 
           {/* Social Media */}
           <div>
-            <h3 className="text-sm font-semibold mb-4 text-white/80">Follow Us</h3>
+            <h3 className="text-sm font-semibold mb-4 text-white/80">{t.footer.followUs}</h3>
             <div className="flex gap-4">
               <a
                 href="https://www.facebook.com"
@@ -110,7 +110,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="text-white hover:text-primary transition-colors inline-flex items-center gap-2"
           >
-            developed with <span className="text-red-500">❤️</span> by INSTACODIN
+            {t.footer.developedBy}
           </a>
         </div>
       </div>

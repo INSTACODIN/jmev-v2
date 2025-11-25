@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { type Locale, getTranslations } from "@/lib/i18n";
 
 interface ImageSlide {
   id: number;
@@ -11,34 +12,33 @@ interface ImageSlide {
   title?: string;
 }
 
-const slides: ImageSlide[] = [
-  {
-    id: 1,
-    image: "/images/carousel/car1.jpg",
-    link: "/detail/ewind",
-    title: "EWIND",
-  },
-  {
-    id: 2,
-    image: "/images/carousel/car2.jpg",
-    link: "/detail/elight",
-    title: "ELIGHT",
-  },
-  {
-    id: 3,
-    image: "/images/carousel/car3.jpg",
-    link: "/detail/ev3",
-    title: "EV3",
-  },
-  {
-    id: 4,
-    image: "/images/carousel/car4.jpg",
-    link: "/detail/ev2",
-    title: "EV2",
-  },
-];
+interface CarouselProps {
+  locale: Locale;
+}
 
-export default function Carousel() {
+export default function Carousel({ locale }: CarouselProps) {
+  const t = getTranslations(locale);
+  
+  const slides: ImageSlide[] = [
+    {
+      id: 1,
+      image: "/images/carousel/car4.jpg",
+      link: `/${locale}/detail/ev2`,
+      title: "EV2",
+    },
+    {
+      id: 2,
+      image: "/images/carousel/car3.jpg",
+      link: `/${locale}/detail/ev3`,
+      title: "EV3",
+    },
+    {
+      id: 3,
+      image: "/images/carousel/car1.jpg",
+      link: `/${locale}/detail/ewind`,
+      title: "EWIND",
+    },
+  ];
   return (
     <section className="relative w-full">
       <div className="flex flex-col">
@@ -66,7 +66,7 @@ export default function Carousel() {
                   href={slide.link}
                   className="px-8 py-4 bg-white text-primary hover:bg-primary hover:text-white transition-all duration-300 rounded-full font-bold text-xl md:text-2xl shadow-lg transform group-hover:scale-105"
                 >
-                  {slide.title ? `View ${slide.title}` : "Learn More"}
+                  {slide.title ? `${t.carousel.view} ${slide.title}` : t.common.learnMore}
                 </Link>
               </div>
             )}

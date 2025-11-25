@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
+import React from "react";
 import { type Locale, getTranslations } from "@/lib/i18n";
 
 const colorOptions = [
@@ -12,9 +13,10 @@ const colorOptions = [
   { name: "White", color: "bg-white border-2 border-gray-300", image: "car-radio-4.png" },
 ];
 
-export default function EV2Detail({ params }: { params: { locale: Locale } }) {
+export default function EV2Detail({ params }: { params: Promise<{ locale: Locale }> }) {
   const [selectedColor, setSelectedColor] = useState(0);
-  const t = getTranslations(params.locale);
+  const { locale } = React.use(params);
+  const t = getTranslations(locale);
 
   return (
     <div className="min-h-screen bg-white">
