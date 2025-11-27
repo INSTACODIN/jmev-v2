@@ -9,11 +9,14 @@ export default function Home() {
       <Carousel />
       
       <div>
-        <StoriesSection />
+        {/* Owner Stories / Histoires des propriétaires */}
+        {/* <StoriesSection /> */}
       
-        <AboutSection />
+        {/* JMEV Group New Energy */}
+        {/* <AboutSection /> */}
       
-        <EnergyFactory />
+        {/* Energy Factory / Usine d'énergie */}
+        {/* <EnergyFactory /> */}
       </div>
     </>
   );

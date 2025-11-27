@@ -12,11 +12,14 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
       <Carousel locale={locale} />
       
       <div>
-        <StoriesSection locale={locale} />
+        {/* Owner Stories / Histoires des propriétaires */}
+        {/* <StoriesSection locale={locale} /> */}
       
-        <AboutSection locale={locale} />
+        {/* JMEV Group New Energy */}
+        {/* <AboutSection locale={locale} /> */}
       
-        <EnergyFactory locale={locale} />
+        {/* Energy Factory / Usine d'énergie */}
+        {/* <EnergyFactory locale={locale} /> */}
       </div>
     </>
   );
