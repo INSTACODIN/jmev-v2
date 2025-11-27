@@ -1,5 +1,4 @@
 import Carousel from "@/components/Carousel";
-import NewsSection from "@/components/NewsSection";
 import StoriesSection from "@/components/StoriesSection";
 import AboutSection from "@/components/AboutSection";
 import EnergyFactory from "@/components/EnergyFactory";
@@ -13,8 +12,6 @@ export default async function Home({ params }: { params: Promise<{ locale: Local
       <Carousel locale={locale} />
       
       <div>
-        <NewsSection locale={locale} />
-      
         <StoriesSection locale={locale} />
       
         <AboutSection locale={locale} />

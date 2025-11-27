@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import ContactForm from "@/components/ContactForm";
 
 export default function ContactUs() {
   return (
@@ -22,13 +21,6 @@ export default function ContactUs() {
               Have questions? We&apos;re here to help. Get in touch with us and we&apos;ll respond as soon as possible.
             </p>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Contact Form Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 lg:px-8">
-          <ContactForm />
         </div>
       </section>
 
