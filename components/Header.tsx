@@ -70,14 +70,6 @@ export default function Header({ locale }: HeaderProps) {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             <Link
-              href={`/${locale}/detail/ewind`}
-              className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
-                isScrolled ? "text-white" : "text-white"
-              }`}
-            >
-              {t.nav.ewind}
-            </Link>
-            <Link
               href={`/${locale}/detail/ev3`}
               className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
                 isScrolled ? "text-white" : "text-white"
@@ -86,37 +78,25 @@ export default function Header({ locale }: HeaderProps) {
               {t.nav.ev3}
             </Link>
             <Link
-              href={`/${locale}/detail/ev2`}
+              href={`/${locale}/detail/elight`}
               className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
                 isScrolled ? "text-white" : "text-white"
               }`}
             >
-              {t.nav.ev2}
+              {t.nav.elight}
             </Link>
-            <Link
-              href={`/${locale}/news`}
-              className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
-                isScrolled ? "text-white" : "text-white"
-              }`}
-            >
-              {t.nav.news}
-            </Link>
-            <Link
-              href={`/${locale}/about`}
-              className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
-                isScrolled ? "text-white" : "text-white"
-              }`}
-            >
-              {t.nav.aboutUs}
-            </Link>
-            <Link
-              href={`/${locale}/contact`}
-              className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
-                isScrolled ? "text-white" : "text-white"
-              }`}
-            >
-              {t.nav.contactUs}
-            </Link>
+            <div className="flex items-center gap-2">
+              <span
+                className={`transition-colors font-medium duration-1000 ease-in-out ${
+                  isScrolled ? "text-white/60" : "text-white/60"
+                }`}
+              >
+                {t.nav.ewind}
+              </span>
+              <span className="text-xs px-2 py-0.5 bg-primary/20 text-primary rounded-full">
+                {t.nav.comingSoon}
+              </span>
+            </div>
             <LanguageSwitcher currentLocale={locale} />
           </div>
 
@@ -166,15 +146,6 @@ export default function Header({ locale }: HeaderProps) {
             >
               <div className="flex flex-col gap-4">
                 <Link
-                  href={`/${locale}/detail/ewind`}
-                  className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
-                    isScrolled ? "text-white" : "text-white"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {t.nav.ewind}
-                </Link>
-                <Link
                   href={`/${locale}/detail/ev3`}
                   className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
                     isScrolled ? "text-white" : "text-white"
@@ -184,41 +155,26 @@ export default function Header({ locale }: HeaderProps) {
                   {t.nav.ev3}
                 </Link>
                 <Link
-                  href={`/${locale}/detail/ev2`}
+                  href={`/${locale}/detail/elight`}
                   className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
                     isScrolled ? "text-white" : "text-white"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {t.nav.ev2}
+                  {t.nav.elight}
                 </Link>
-                <Link
-                  href={`/${locale}/news`}
-                  className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
-                    isScrolled ? "text-white" : "text-white"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {t.nav.news}
-                </Link>
-                <Link
-                  href={`/${locale}/about`}
-                  className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
-                    isScrolled ? "text-white" : "text-white"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {t.nav.aboutUs}
-                </Link>
-                <Link
-                  href={`/${locale}/contact`}
-                  className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
-                    isScrolled ? "text-white" : "text-white"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {t.nav.contactUs}
-                </Link>
+                <div className="flex items-center gap-2">
+                  <span
+                    className={`transition-colors font-medium duration-1000 ease-in-out ${
+                      isScrolled ? "text-white/60" : "text-white/60"
+                    }`}
+                  >
+                    {t.nav.ewind}
+                  </span>
+                  <span className="text-xs px-2 py-0.5 bg-primary/20 text-primary rounded-full">
+                    {t.nav.comingSoon}
+                  </span>
+                </div>
                 <div className="pt-2">
                   <LanguageSwitcher currentLocale={locale} />
                 </div>

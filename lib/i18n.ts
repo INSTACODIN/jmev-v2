@@ -7,10 +7,12 @@ export interface Translations {
   nav: {
     ewind: string;
     ev3: string;
+    elight: string;
     ev2: string;
     news: string;
     aboutUs: string;
     contactUs: string;
+    comingSoon: string;
   };
   footer: {
     models: string;
@@ -69,10 +71,12 @@ export const translations: Record<Locale, Translations> = {
     nav: {
       ewind: 'EWIND',
       ev3: 'EV3',
+      elight: 'ELIGHT',
       ev2: 'EV2',
       news: 'Actualités',
       aboutUs: 'À propos',
       contactUs: 'Contact',
+      comingSoon: 'Bientôt disponible',
     },
     footer: {
       models: 'Modèles',
@@ -129,10 +133,12 @@ export const translations: Record<Locale, Translations> = {
     nav: {
       ewind: 'EWIND',
       ev3: 'EV3',
+      elight: 'ELIGHT',
       ev2: 'EV2',
       news: 'News',
       aboutUs: 'About Us',
       contactUs: 'Contact Us',
+      comingSoon: 'Coming Soon',
     },
     footer: {
       models: 'Models',
