@@ -89,8 +89,8 @@ export default function Header({ locale }: HeaderProps) {
               <span
                 className={`transition-colors font-medium duration-1000 ease-in-out ${
                   isScrolled ? "text-white/60" : "text-white/60"
-                }`}
-              >
+              }`}
+            >
                 {t.nav.ewind}
               </span>
               <span className="text-xs px-2 py-0.5 bg-primary/20 text-primary rounded-full">
@@ -167,8 +167,8 @@ export default function Header({ locale }: HeaderProps) {
                   <span
                     className={`transition-colors font-medium duration-1000 ease-in-out ${
                       isScrolled ? "text-white/60" : "text-white/60"
-                    }`}
-                  >
+                  }`}
+                >
                     {t.nav.ewind}
                   </span>
                   <span className="text-xs px-2 py-0.5 bg-primary/20 text-primary rounded-full">
