@@ -22,9 +22,9 @@ export default function Carousel({ locale }: CarouselProps) {
   const slides: ImageSlide[] = [
     {
       id: 1,
-      image: "/images/carousel/banner-ev2.jpg",
-      link: `/${locale}/detail/ev2`,
-      title: "EV2",
+      image: "/images/carousel/banner-ev3.jpg",
+      link: `/${locale}/detail/ev3`,
+      title: "EV3",
     },
     {
       id: 2,
@@ -34,9 +34,9 @@ export default function Carousel({ locale }: CarouselProps) {
     },
     {
       id: 3,
-      image: "/images/carousel/banner-ev3.jpg",
-      link: `/${locale}/detail/ev3`,
-      title: "EV3",
+      image: "/images/carousel/banner-ev2.jpg",
+      link: `/${locale}/detail/ev2`,
+      title: "EV2",
     },
   ];
   return (
@@ -61,12 +61,23 @@ export default function Carousel({ locale }: CarouselProps) {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
             
             {slide.link && (
-              <div className="absolute inset-0 flex items-center justify-center z-10">
+              <div className="absolute top-16 md:top-20 left-1/2 transform -translate-x-1/2 z-10 px-4 w-full max-w-xs md:max-w-none md:w-auto">
                 <Link
                   href={slide.link}
-                  className="px-8 py-4 bg-white text-primary hover:bg-primary hover:text-white transition-all duration-300 rounded-full font-bold text-xl md:text-2xl shadow-lg transform group-hover:scale-105"
+                  className="group/btn relative inline-flex items-center justify-center gap-2.5 px-5 md:px-6 py-3 md:py-3.5 bg-white/95 backdrop-blur-md text-primary hover:bg-white transition-all duration-500 rounded-full font-semibold text-base md:text-lg lg:text-xl shadow-2xl hover:shadow-primary/30 border border-white/30 hover:border-primary/40 overflow-hidden hover:scale-105 active:scale-100"
                 >
-                  {slide.title ? `${t.carousel.view} ${slide.title}` : t.common.learnMore}
+                  <span className="relative z-10 flex items-center gap-2 whitespace-nowrap">
+                    {slide.title ? `${t.carousel.view} ${slide.title}` : t.common.learnMore}
+                    <svg 
+                      className="w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover/btn:translate-x-1" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></span>
                 </Link>
               </div>
             )}
