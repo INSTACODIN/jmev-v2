@@ -65,13 +65,6 @@ export default function ELIGHTDetail({ params }: { params: Promise<{ locale: Loc
               </button>
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex gap-4 justify-center mb-6">
-              <button className="px-8 py-3 bg-white text-primary hover:bg-gray-light transition-colors rounded-full font-medium">
-                {t.elight.viewConfiguration}
-              </button>
-            </div>
-
             {/* Color Options */}
             <div className="flex gap-4 justify-center mb-4">
               {colorOptions.map((color, index) => (
@@ -84,13 +77,6 @@ export default function ELIGHTDetail({ params }: { params: Promise<{ locale: Loc
                   aria-label={color.name}
                 />
               ))}
-            </div>
-
-            {/* Watch Video Button */}
-            <div className="flex justify-center mt-4">
-              <button className="px-8 py-3 border-2 border-white text-white hover:bg-white hover:text-primary transition-colors rounded-full font-medium">
-                {t.elight.watchVideo}
-              </button>
             </div>
           </motion.div>
         </div>

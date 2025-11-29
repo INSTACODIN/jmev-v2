@@ -43,14 +43,6 @@ export default function EV2Detail({ params }: { params: Promise<{ locale: Locale
             <p className="text-xl md:text-2xl opacity-90 mb-8">
               {t.ev2.subtitle}
             </p>
-            <div className="flex gap-4 justify-center">
-              <button className="px-8 py-3 bg-white text-primary hover:bg-gray-light transition-colors rounded-full font-medium">
-                {t.common.viewConfiguration}
-              </button>
-              <button className="px-8 py-3 border-2 border-white text-white hover:bg-white hover:text-primary transition-colors rounded-full font-medium">
-                {t.common.watchVideo}
-              </button>
-            </div>
           </motion.div>
         </div>
         <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-white/80 z-10">
