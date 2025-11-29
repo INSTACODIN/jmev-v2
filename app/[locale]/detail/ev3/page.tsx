@@ -24,7 +24,7 @@ export default function EV3Detail({ params }: { params: Promise<{ locale: Locale
       <section className="relative w-full h-screen">
         <div className="absolute inset-0">
           <Image
-            src="/images/ev3/banner-0.png"
+            src="/images/ev3/banner-1.png"
             alt="EV3 Hero"
             fill
             className="object-cover"
@@ -78,16 +78,6 @@ export default function EV3Detail({ params }: { params: Promise<{ locale: Locale
             </div>
           </motion.div>
         </div>
-      </section>
-
-      {/* Banner Section 1 */}
-      <section className="relative w-full h-screen">
-        <Image
-          src="/images/ev3/banner-1.png"
-          alt="EV3 Banner"
-          fill
-          className="object-cover"
-        />
       </section>
 
       {/* Color Options */}

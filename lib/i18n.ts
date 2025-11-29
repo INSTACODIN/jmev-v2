@@ -64,6 +64,21 @@ export interface Translations {
     premiumQuality: string;
     premiumQualityDesc: string;
   };
+  elight: {
+    title: string;
+    subtitle: string;
+    comingSoonTitle: string;
+    comingSoonDesc: string;
+    stayUpdated: string;
+    notifyMe: string;
+    whatToExpect: string;
+    advancedTechnology: string;
+    advancedTechnologyDesc: string;
+    ecoFriendly: string;
+    ecoFriendlyDesc: string;
+    premiumQuality: string;
+    premiumQualityDesc: string;
+  };
 }
 
 export const translations: Record<Locale, Translations> = {
@@ -128,6 +143,21 @@ export const translations: Record<Locale, Translations> = {
       premiumQuality: 'Qualité premium',
       premiumQualityDesc: 'Construit avec précision et attention à chaque détail.',
     },
+    elight: {
+      title: 'ELIGHT',
+      subtitle: 'L\'avenir de la mobilité électrique arrive. Restez à l\'écoute pour une expérience de conduite extraordinaire.',
+      comingSoonTitle: 'Bientôt disponible',
+      comingSoonDesc: 'Nous travaillons dur pour vous apporter l\'ELIGHT - un véhicule électrique révolutionnaire qui combine une technologie de pointe avec un design exceptionnel.',
+      stayUpdated: 'Restez informé',
+      notifyMe: 'Me notifier',
+      whatToExpect: 'À quoi s\'attendre',
+      advancedTechnology: 'Technologie avancée',
+      advancedTechnologyDesc: 'Technologie de véhicule électrique de pointe pour des performances supérieures.',
+      ecoFriendly: 'Écologique',
+      ecoFriendlyDesc: 'Zéro émission pour un avenir plus propre et plus vert.',
+      premiumQuality: 'Qualité premium',
+      premiumQualityDesc: 'Construit avec précision et attention à chaque détail.',
+    },
   },
   en: {
     nav: {
@@ -180,6 +210,21 @@ export const translations: Record<Locale, Translations> = {
       subtitle: 'The future of electric mobility is on its way. Stay tuned for an extraordinary driving experience.',
       comingSoonTitle: 'Coming Soon',
       comingSoonDesc: 'We\'re working hard to bring you the EWIND - a revolutionary electric vehicle that combines cutting-edge technology with exceptional design.',
+      stayUpdated: 'Stay Updated',
+      notifyMe: 'Notify Me',
+      whatToExpect: 'What to Expect',
+      advancedTechnology: 'Advanced Technology',
+      advancedTechnologyDesc: 'Cutting-edge electric vehicle technology for superior performance.',
+      ecoFriendly: 'Eco-Friendly',
+      ecoFriendlyDesc: 'Zero emissions for a cleaner, greener future.',
+      premiumQuality: 'Premium Quality',
+      premiumQualityDesc: 'Built with precision and attention to every detail.',
+    },
+    elight: {
+      title: 'ELIGHT',
+      subtitle: 'The future of electric mobility is on its way. Stay tuned for an extraordinary driving experience.',
+      comingSoonTitle: 'Coming Soon',
+      comingSoonDesc: 'We\'re working hard to bring you the ELIGHT - a revolutionary electric vehicle that combines cutting-edge technology with exceptional design.',
       stayUpdated: 'Stay Updated',
       notifyMe: 'Notify Me',
       whatToExpect: 'What to Expect',
