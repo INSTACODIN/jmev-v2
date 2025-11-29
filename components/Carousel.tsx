@@ -28,9 +28,9 @@ export default function Carousel({ locale }: CarouselProps) {
     },
     {
       id: 2,
-      image: "/images/carousel/banner-ewind.jpg",
-      link: `/${locale}/detail/ewind`,
-      title: "EWIND",
+      image: "/images/elight/elight-banner.jpg",
+      link: `/${locale}/detail/elight`,
+      title: "ELIGHT",
     },
   ];
   return (
