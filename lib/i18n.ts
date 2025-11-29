@@ -8,7 +8,6 @@ export interface Translations {
     ewind: string;
     ev3: string;
     elight: string;
-    ev2: string;
     news: string;
     aboutUs: string;
     contactUs: string;
@@ -27,20 +26,6 @@ export interface Translations {
     watchVideo: string;
     comingSoon: string;
     learnMore: string;
-  };
-  ev2: {
-    title: string;
-    subtitle: string;
-    spaciousVersatile: string;
-    spaciousVersatileDesc: string;
-    colorOptions: string;
-    exquisiteAppearance: string;
-    exquisiteAppearanceDesc: string;
-    smoothStable: string;
-    smoothStableDesc: string;
-    highEndurance: string;
-    highEnduranceDesc: string;
-    fiveStarSafety: string;
   };
   ev3: {
     title: string;
@@ -119,7 +104,6 @@ export const translations: Record<Locale, Translations> = {
       ewind: 'EWIND',
       ev3: 'EV3',
       elight: 'ELIGHT',
-      ev2: 'EV2',
       news: 'Actualités',
       aboutUs: 'À propos',
       contactUs: 'Contact',
@@ -138,20 +122,6 @@ export const translations: Record<Locale, Translations> = {
       watchVideo: 'Regarder la vidéo',
       comingSoon: 'Bientôt disponible',
       learnMore: 'En savoir plus',
-    },
-    ev2: {
-      title: 'EV2',
-      subtitle: 'Véhicule électrique spacieux et polyvalent',
-      spaciousVersatile: 'Spacieux et polyvalent',
-      spaciousVersatileDesc: '5 portes et 4 places pour les passagers; grand espace et carrosserie flexible pour le stockage.',
-      colorOptions: 'Options de couleur',
-      exquisiteAppearance: 'Apparence exquise',
-      exquisiteAppearanceDesc: 'Design intelligent, avec intérieurs à deux couleurs pour mettre en valeur.',
-      smoothStable: 'Expérience de conduite fluide et stable',
-      smoothStableDesc: 'Redesign sur plateforme EV pure, avec conception de centre de gravité bas et le ratio de charge optimal des essieux avant et arrière de 49:51 pour une bonne maniabilité.',
-      highEndurance: 'Haute autonomie',
-      highEnduranceDesc: 'L\'autonomie du JMEV EV2 est de 201 km. Équipé du système de récupération d\'énergie efficace à 30%, rappel de batterie faible et fonctions de protection de l\'autonomie.',
-      fiveStarSafety: 'Carrosserie de sécurité cinq étoiles',
     },
     ev3: {
       title: 'EV3',
@@ -228,7 +198,6 @@ export const translations: Record<Locale, Translations> = {
       ewind: 'EWIND',
       ev3: 'EV3',
       elight: 'ELIGHT',
-      ev2: 'EV2',
       news: 'News',
       aboutUs: 'About Us',
       contactUs: 'Contact Us',
@@ -247,20 +216,6 @@ export const translations: Record<Locale, Translations> = {
       watchVideo: 'Watch Video',
       comingSoon: 'Coming Soon',
       learnMore: 'Learn More',
-    },
-    ev2: {
-      title: 'EV2',
-      subtitle: 'Spacious and Versatile Electric Vehicle',
-      spaciousVersatile: 'Spacious and Versatile',
-      spaciousVersatileDesc: '5 doors and 4 seats for passengers; large space and flexible body for storage.',
-      colorOptions: 'Color Options',
-      exquisiteAppearance: 'Exquisite Appearance',
-      exquisiteAppearanceDesc: 'Smart design, with two-color splicing interiors for highlighting.',
-      smoothStable: 'Smooth and Stable Driving Experience',
-      smoothStableDesc: 'Redesign on pure EV platform, with design of low gravity center and the optimal front and rear axle load ratio of 49:51 for good handling.',
-      highEndurance: 'High Endurance',
-      highEnduranceDesc: 'The cruising range of JMEV EV2 is 201km. Equipped with the 30% efficient energy recovery system, low battery reminder and range protection functions.',
-      fiveStarSafety: 'Five-star Safety Body',
     },
     ev3: {
       title: 'EV3',

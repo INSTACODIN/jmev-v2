@@ -32,12 +32,6 @@ export default function Carousel({ locale }: CarouselProps) {
       link: `/${locale}/detail/ewind`,
       title: "EWIND",
     },
-    {
-      id: 3,
-      image: "/images/carousel/banner-ev2.jpg",
-      link: `/${locale}/detail/ev2`,
-      title: "EV2",
-    },
   ];
   return (
     <section className="relative w-full">

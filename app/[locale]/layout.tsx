@@ -19,8 +19,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: L
       ? "JMEV - Véhicules Électriques" 
       : "JMEV - Electric Vehicles",
     description: locale === 'fr'
-      ? "Découvrez les véhicules électriques JMEV. EV2, EV3 et bientôt EWIND."
-      : "Discover JMEV electric vehicles. EV2, EV3 and coming soon EWIND.",
+      ? "Découvrez les véhicules électriques JMEV. EV3, ELIGHT et bientôt EWIND."
+      : "Discover JMEV electric vehicles. EV3, ELIGHT and coming soon EWIND.",
     alternates: {
       canonical: `${baseUrl}/${locale}`,
       languages: {

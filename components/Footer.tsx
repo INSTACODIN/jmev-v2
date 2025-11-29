@@ -41,12 +41,6 @@ export default function Footer({ locale }: FooterProps) {
               >
                 {t.nav.ev3}
               </Link>
-              <Link
-                href={`/${locale}/detail/ev2`}
-                className="text-white hover:text-primary transition-colors text-sm"
-              >
-                {t.nav.ev2}
-              </Link>
             </nav>
           </div>
 
