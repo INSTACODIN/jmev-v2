@@ -2,11 +2,12 @@ import Carousel from "@/components/Carousel";
 import StoriesSection from "@/components/StoriesSection";
 import AboutSection from "@/components/AboutSection";
 import EnergyFactory from "@/components/EnergyFactory";
+import { defaultLocale } from "@/lib/i18n";
 
 export default function Home() {
   return (
     <>
-      <Carousel />
+      <Carousel locale={defaultLocale} />
       
       <div>
         {/* Owner Stories / Histoires des propriétaires */}

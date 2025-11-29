@@ -22,21 +22,21 @@ export default function Carousel({ locale }: CarouselProps) {
   const slides: ImageSlide[] = [
     {
       id: 1,
-      image: "/images/carousel/car4.jpg",
+      image: "/images/carousel/banner-ev2.jpg",
       link: `/${locale}/detail/ev2`,
       title: "EV2",
     },
     {
       id: 2,
-      image: "/images/carousel/car3.jpg",
-      link: `/${locale}/detail/ev3`,
-      title: "EV3",
+      image: "/images/carousel/banner-ewind.jpg",
+      link: `/${locale}/detail/ewind`,
+      title: "EWIND",
     },
     {
       id: 3,
-      image: "/images/carousel/car1.jpg",
-      link: `/${locale}/detail/ewind`,
-      title: "EWIND",
+      image: "/images/carousel/banner-ev3.jpg",
+      link: `/${locale}/detail/ev3`,
+      title: "EV3",
     },
   ];
   return (
