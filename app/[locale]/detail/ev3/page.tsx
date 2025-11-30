@@ -2,19 +2,10 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
 import React from "react";
 import { type Locale, getTranslations, isValidLocale, defaultLocale } from "@/lib/i18n";
 
-const colorOptions = [
-  { name: "Blue", color: "bg-blue-600", image: "car-radio-1.png" },
-  { name: "Cyan", color: "bg-cyan-500", image: "car-radio-2.png" },
-  { name: "Green", color: "bg-green-500", image: "car-radio-3.png" },
-  { name: "White", color: "bg-white border-2 border-gray-300", image: "car-radio-4.png" },
-];
-
 export default function EV3Detail({ params }: { params: Promise<{ locale: string }> }) {
-  const [selectedColor, setSelectedColor] = useState(0);
   const { locale: localeParam } = React.use(params);
   const locale: Locale = isValidLocale(localeParam) ? localeParam : defaultLocale;
   const t = getTranslations(locale);
@@ -70,37 +61,6 @@ export default function EV3Detail({ params }: { params: Promise<{ locale: string
               />
             </div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Color Options */}
-      <section className="py-20 bg-gray-light">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="flex flex-col items-center">
-            <div className="w-full max-w-4xl mb-12">
-              <div className="relative w-full h-96">
-                <Image
-                  src={`/images/ev3/${colorOptions[selectedColor].image}`}
-                  alt={`EV3 ${colorOptions[selectedColor].name}`}
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            </div>
-            
-            <div className="flex gap-4">
-              {colorOptions.map((color, index) => (
-                <button
-                  key={index}
-                  onClick={() => setSelectedColor(index)}
-                  className={`w-16 h-16 rounded-full ${color.color} transition-all ${
-                    selectedColor === index ? "ring-4 ring-primary ring-offset-2" : ""
-                  }`}
-                  aria-label={color.name}
-                />
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 

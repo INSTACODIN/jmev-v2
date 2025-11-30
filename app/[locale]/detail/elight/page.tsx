@@ -6,16 +6,7 @@ import { useState } from "react";
 import React from "react";
 import { type Locale, getTranslations, isValidLocale, defaultLocale } from "@/lib/i18n";
 
-const colorOptions = [
-  { name: "White", color: "bg-white border-2 border-gray-300", image: "/images/elight/car-radio-1.png" },
-  { name: "Black", color: "bg-gray-900", image: "/images/elight/car-radio-2.png" },
-  { name: "Purple", color: "bg-purple-600", image: "/images/elight/car-radio-3.png" },
-  { name: "Green", color: "bg-green-500", image: "/images/elight/car-radio-4.png" },
-  { name: "Blue", color: "bg-blue-600", image: "/images/elight/car-radio-5.png" },
-];
-
 export default function ELIGHTDetail({ params }: { params: Promise<{ locale: string }> }) {
-  const [selectedColor, setSelectedColor] = useState(0);
   const [driveType, setDriveType] = useState<'right' | 'left'>('right');
   const { locale: localeParam } = React.use(params);
   const locale: Locale = isValidLocale(localeParam) ? localeParam : defaultLocale;
@@ -65,43 +56,11 @@ export default function ELIGHTDetail({ params }: { params: Promise<{ locale: str
                 {t.elight.leftHandDrive}
               </button>
             </div>
-
-            {/* Color Options */}
-            <div className="flex gap-4 justify-center mb-4">
-              {colorOptions.map((color, index) => (
-                <button
-                  key={index}
-                  onClick={() => setSelectedColor(index)}
-                  className={`w-12 h-12 rounded-full ${color.color} transition-all ${
-                    selectedColor === index ? "ring-4 ring-white ring-offset-2" : ""
-                  }`}
-                  aria-label={color.name}
-                />
-              ))}
-            </div>
           </motion.div>
         </div>
         <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-white/80 z-10">
           * Specific parameters are subject to the actual vehicles.
         </p>
-      </section>
-
-      {/* Car Image Display Section */}
-      <section className="py-20 bg-gray-light">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="flex flex-col items-center">
-            <div className="w-full max-w-4xl mb-12">
-              <div className="relative w-full h-96">
-                <Image
-                  src={colorOptions[selectedColor].image}
-                  alt={`ELIGHT ${colorOptions[selectedColor].name}`}
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* METICULOUSLY DESIGNED Section */}
