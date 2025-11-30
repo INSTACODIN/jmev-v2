@@ -2,10 +2,11 @@ import Carousel from "@/components/Carousel";
 import StoriesSection from "@/components/StoriesSection";
 import AboutSection from "@/components/AboutSection";
 import EnergyFactory from "@/components/EnergyFactory";
-import { type Locale } from "@/lib/i18n";
+import { type Locale, isValidLocale, defaultLocale } from "@/lib/i18n";
 
-export default async function Home({ params }: { params: Promise<{ locale: Locale }> }) {
-  const { locale } = await params;
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale: localeParam } = await params;
+  const locale: Locale = isValidLocale(localeParam) ? localeParam : defaultLocale;
   
   return (
     <>

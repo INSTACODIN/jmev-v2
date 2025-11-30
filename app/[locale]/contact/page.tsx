@@ -2,10 +2,11 @@
 
 import { motion } from "framer-motion";
 import React from "react";
-import { type Locale, getTranslations } from "@/lib/i18n";
+import { type Locale, getTranslations, isValidLocale, defaultLocale } from "@/lib/i18n";
 
-export default function ContactPage({ params }: { params: Promise<{ locale: Locale }> }) {
-  const { locale } = React.use(params);
+export default function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale: localeParam } = React.use(params);
+  const locale: Locale = isValidLocale(localeParam) ? localeParam : defaultLocale;
   const t = getTranslations(locale);
   
   return (

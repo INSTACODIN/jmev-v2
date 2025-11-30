@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 import React from "react";
-import { type Locale, getTranslations } from "@/lib/i18n";
+import { type Locale, getTranslations, isValidLocale, defaultLocale } from "@/lib/i18n";
 
 const colorOptions = [
   { name: "Blue", color: "bg-blue-600", image: "car-radio-1.png" },
@@ -13,9 +13,10 @@ const colorOptions = [
   { name: "White", color: "bg-white border-2 border-gray-300", image: "car-radio-4.png" },
 ];
 
-export default function EV3Detail({ params }: { params: Promise<{ locale: Locale }> }) {
+export default function EV3Detail({ params }: { params: Promise<{ locale: string }> }) {
   const [selectedColor, setSelectedColor] = useState(0);
-  const { locale } = React.use(params);
+  const { locale: localeParam } = React.use(params);
+  const locale: Locale = isValidLocale(localeParam) ? localeParam : defaultLocale;
   const t = getTranslations(locale);
 
   return (

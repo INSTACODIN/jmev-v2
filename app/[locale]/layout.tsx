@@ -2,14 +2,15 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LocaleHtml from "@/components/LocaleHtml";
-import { getTranslations, type Locale, locales } from "@/lib/i18n";
+import { getTranslations, type Locale, locales, isValidLocale, defaultLocale } from "@/lib/i18n";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: Locale }> }): Promise<Metadata> {
-  const { locale } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale: localeParam } = await params;
+  const locale: Locale = isValidLocale(localeParam) ? localeParam : defaultLocale;
   const t = getTranslations(locale);
   
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://jmev.com';
@@ -37,9 +38,10 @@ export default async function LocaleLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  const { locale: localeParam } = await params;
+  const locale: Locale = isValidLocale(localeParam) ? localeParam : defaultLocale;
   
   return (
     <>
