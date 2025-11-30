@@ -107,7 +107,7 @@ export const translations: Record<Locale, Translations> = {
       news: 'Actualités',
       aboutUs: 'À propos',
       contactUs: 'Contact',
-      comingSoon: 'Bientôt disponible',
+      comingSoon: 'Coming Soon',
     },
     footer: {
       models: 'Modèles',
@@ -120,7 +120,7 @@ export const translations: Record<Locale, Translations> = {
     common: {
       viewConfiguration: 'Voir la configuration',
       watchVideo: 'Regarder la vidéo',
-      comingSoon: 'Bientôt disponible',
+      comingSoon: 'Coming Soon',
       learnMore: 'En savoir plus',
     },
     ev3: {
@@ -133,7 +133,7 @@ export const translations: Record<Locale, Translations> = {
     ewind: {
       title: 'EWIND',
       subtitle: 'L\'avenir de la mobilité électrique arrive. Restez à l\'écoute pour une expérience de conduite extraordinaire.',
-      comingSoonTitle: 'Bientôt disponible',
+      comingSoonTitle: 'Coming Soon',
       comingSoonDesc: 'Nous travaillons dur pour vous apporter l\'EWIND - un véhicule électrique révolutionnaire qui combine une technologie de pointe avec un design exceptionnel.',
       stayUpdated: 'Restez informé',
       notifyMe: 'Me notifier',
