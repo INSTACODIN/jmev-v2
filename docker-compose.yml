@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: jmev-v2
+    ports:
+      - "7878:3000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    volumes:
+      - ./.next/cache:/app/.next/cache
+    networks:
+      - jmev-network
+
+networks:
+  jmev-network:
+    driver: bridge
+
