@@ -2,12 +2,10 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
 import React from "react";
 import { type Locale, getTranslations, isValidLocale, defaultLocale } from "@/lib/i18n";
 
 export default function ELIGHTDetail({ params }: { params: Promise<{ locale: string }> }) {
-  const [driveType, setDriveType] = useState<'right' | 'left'>('right');
   const { locale: localeParam } = React.use(params);
   const locale: Locale = isValidLocale(localeParam) ? localeParam : defaultLocale;
   const t = getTranslations(locale);
@@ -33,29 +31,6 @@ export default function ELIGHTDetail({ params }: { params: Promise<{ locale: str
             transition={{ duration: 0.6 }}
             className="text-center text-white w-full max-w-4xl"
           >
-            {/* Drive Type Selection */}
-            <div className="flex gap-4 justify-center mb-6">
-              <button
-                onClick={() => setDriveType('right')}
-                className={`px-6 py-3 rounded-full font-medium transition-all ${
-                  driveType === 'right'
-                    ? 'bg-white text-primary'
-                    : 'bg-white/20 text-white hover:bg-white/30'
-                }`}
-              >
-                {t.elight.rightHandDrive}
-              </button>
-              <button
-                onClick={() => setDriveType('left')}
-                className={`px-6 py-3 rounded-full font-medium transition-all ${
-                  driveType === 'left'
-                    ? 'bg-white text-primary'
-                    : 'bg-white/20 text-white hover:bg-white/30'
-                }`}
-              >
-                {t.elight.leftHandDrive}
-              </button>
-            </div>
           </motion.div>
         </div>
         <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-white/80 z-10">
