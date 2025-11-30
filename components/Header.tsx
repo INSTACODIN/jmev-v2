@@ -97,6 +97,14 @@ export default function Header({ locale }: HeaderProps) {
                 {t.nav.comingSoon}
               </span>
             </div>
+            <Link
+              href={`/${locale}/contact`}
+              className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
+                isScrolled ? "text-white" : "text-white"
+              }`}
+            >
+              {t.nav.contactUs}
+            </Link>
             <LanguageSwitcher currentLocale={locale} />
           </div>
 
@@ -175,6 +183,15 @@ export default function Header({ locale }: HeaderProps) {
                     {t.nav.comingSoon}
                   </span>
                 </div>
+                <Link
+                  href={`/${locale}/contact`}
+                  className={`hover:text-primary transition-colors font-medium duration-1000 ease-in-out ${
+                    isScrolled ? "text-white" : "text-white"
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {t.nav.contactUs}
+                </Link>
                 <div className="pt-2">
                   <LanguageSwitcher currentLocale={locale} />
                 </div>
